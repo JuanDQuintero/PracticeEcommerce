@@ -1,14 +1,33 @@
-import { Link } from "react-router-dom"
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { RootState } from '../store/store';
 
 const Navbar: React.FC = () => {
+  const { items } = useSelector((state: RootState) => state.cart);
+  const totalItems = items.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <nav className="bg-blue-500 text-white p-4 shadow-md">
-        <div className="container px-5 flex justify-between items-center">
-            <Link to="/" className="text-xl font-bold">My eCommerce</Link>
-            <Link to="/cart" className="text-lg">Cart</Link>
-        </div>
+      <div className="px-5 flex justify-between items-center w-full">
+        <Link to="/" className="text-xl font-bold">
+          My eCommerce
+        </Link>
+        <Link to="/cart" className="text-lg">
+          <div className="flex items-center flex-row gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="size-6"
+            >
+              <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+            </svg>
+            <p className="text-sm">{totalItems}</p>
+          </div>
+        </Link>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

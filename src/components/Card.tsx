@@ -1,13 +1,16 @@
-import React from 'react'
+import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
-const Card: React.FC = ({children}) => {
-  return (
-    <div className='bg-white shadow-md rounded-md w-100'>
-      {children}
-    </div>
-  )
+interface CardProps extends React.PropsWithChildren<{}> {
+  className?: string;
 }
 
-
+const Card: React.FC<CardProps> = ({ children, className = '' }) => {
+  return (
+    <div className={twMerge('bg-white shadow-md rounded-md w-fit', className)}>
+      {children}
+    </div>
+  );
+};
 
 export default Card;

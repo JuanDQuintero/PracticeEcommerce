@@ -4,7 +4,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-800 text-white py-6">
       <div className="container mx-auto text-center">
-        <p className="text-sm">&copy; 2024 Mi eCommerce. Todos los derechos reservados.</p>
+        <p className="text-sm">
+          &copy; 2024 Mi eCommerce. Todos los derechos reservados.
+        </p>
         <div className="flex justify-center space-x-6 mt-4">
           <a
             href="/privacy"

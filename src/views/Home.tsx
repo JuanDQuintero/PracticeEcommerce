@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 import Products from '../components/Products';
 
 const Home: React.FC = () => {
@@ -13,6 +14,7 @@ const Home: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-gray-100 to-transparent"></div>
       </div>
       <Products />
+      <Toaster position="bottom-right" />
     </div>
   );
 };

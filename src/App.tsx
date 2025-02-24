@@ -1,14 +1,16 @@
+import { FC, ReactElement } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Provider } from 'react-redux';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './components/Footer';
-import Navbar from './components/Navbar';
+
+import Footer from '@components/Footer';
+import Navbar from '@components/Navbar';
 import { store } from './store/store';
 import Cart from './views/Cart';
 import Home from './views/Home';
 
-function App() {
+const App: FC = (): ReactElement => {
   return (
     <Router>
       <Provider store={store}>
@@ -22,6 +24,6 @@ function App() {
       <Footer />
     </Router>
   );
-}
+};
 
 export default App;

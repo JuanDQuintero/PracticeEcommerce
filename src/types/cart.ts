@@ -12,3 +12,7 @@ export interface CartState {
   items: Product[];
   totalPrice: number;
 }
+
+export interface CartProduct extends Product {
+  inCart?: boolean;
+}

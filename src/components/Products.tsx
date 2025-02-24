@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
-import { Product } from 'types/cart';
+import { FC, ReactElement, useEffect, useState } from 'react';
+import { CartProduct } from 'types/cart';
 import Item from './Item';
 
-const Products: React.FC = () => {
-  const [items, setItems] = useState<Product[]>([]);
+const Products: FC = (): ReactElement => {
+  const [items, setItems] = useState<CartProduct[]>([]);
   const [loader, setLoader] = useState<boolean>(false);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Products: React.FC = () => {
   );
 
   return (
-    <div className="mx-60 pb-6">
+    <div className="flex flex-col items-center justify-center p-8 mx-5 pb-5 lg:mx-60 lg:pb-6">
       {loader ? (
         <div role="status" className="flex justify-center items-center pt-10">
           <svg
@@ -50,7 +50,7 @@ const Products: React.FC = () => {
         </div>
       ) : (
         <>
-          <h2 className="font-bold text-lg pb-8 text-gray-800">
+          <h2 className="font-bold text-lg pb-8 text-gray-800 lg:text-2xl">
             New Products!!
           </h2>
           {Object.entries(groupedItems).map(([category, items]) => {
@@ -62,7 +62,7 @@ const Products: React.FC = () => {
                 <h2 className="text-l text-blue-600 font-bold mb-4">
                   {category.toUpperCase()}
                 </h2>
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                   {items.map((item) => (
                     <Item key={item.id} {...item} category={category} />
                   ))}

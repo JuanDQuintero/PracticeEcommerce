@@ -1,18 +1,12 @@
-import React from 'react';
+import Banner from '@components/Banner';
+import Products from '@components/Products';
+import { FC, ReactElement } from 'react';
 import { Toaster } from 'react-hot-toast';
-import Products from '../components/Products';
 
-const Home: React.FC = () => {
+const Home: FC = (): ReactElement => {
   return (
     <div className="flex flex-col min-h-screen flex-grow bg-opacity-50">
-      <div className="relative w-full">
-        <img
-          src="/src/assets/image.png"
-          alt="Banner"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-gray-100 to-transparent"></div>
-      </div>
+      <Banner />
       <Products />
       <Toaster position="bottom-right" />
     </div>

@@ -1,8 +1,8 @@
-import React from 'react';
+import { FC, ReactElement } from 'react';
 
-const Footer: React.FC = () => {
+const Footer: FC = (): ReactElement => {
   return (
-    <footer className="bg-gray-800 text-white py-6">
+    <footer className="bg-gray-800 text-white py-6 ">
       <div className="container mx-auto text-center">
         <p className="text-sm">
           &copy; 2024 Mi eCommerce. Todos los derechos reservados.

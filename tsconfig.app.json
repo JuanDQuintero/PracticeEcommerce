@@ -8,8 +8,8 @@
     "skipLibCheck": true,
     "baseUrl": "./src",
     "paths": {
-      "components/*": ["components/*"],
-      "assets/*": ["assets/*"]
+      "@components/*": ["components/*"],
+      "@assets/*": ["assets/*"]
     },
     /* Bundler mode */
     "moduleResolution": "bundler",
